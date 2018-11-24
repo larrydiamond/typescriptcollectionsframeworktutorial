@@ -1,0 +1,35 @@
+{
+  "name": "TypeScriptCollectionsFrameworkNodeJSExamples",
+  "author": "Larry Diamond <ldiamond@ldiamond.com>",
+  "version": "1.0.0",
+  "description": "Typescript Collection Framework Node.js examples",
+  "homepage": "https://github.com/larrydiamond/typescriptcollectionframeworknodeexamples",
+  "license": "MIT",
+  "engineStrict": true,
+  "dependencines": {},
+  "devDependencies": {
+    "@types/node": "^10.12.10",
+    "tslint": "~5.11.0",
+    "typescript": "~3.1.6",
+    "typescriptcollectionsframework": "^4.3.0"
+  },
+  "main": "dist/index.js",
+  "nyc": {
+    "exclude": [
+      "spec/*.ts"
+    ]
+  },
+  "typings": "definitions/index",
+  "typescript": {
+    "definition": "definitions/index"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json ",
+    "arraylist": "node dist/arraylist.js",
+    "tslint": "tslint -c tslint.json *.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larrydiamond/typescriptcollectionframeworknodeexamples.git"
+  }
+}
