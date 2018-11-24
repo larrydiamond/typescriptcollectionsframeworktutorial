@@ -1,4 +1,5 @@
 // To run this example:
+// npm install 
 // npm run build
 // npm run arraylist
 
