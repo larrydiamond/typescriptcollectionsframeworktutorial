@@ -18,7 +18,7 @@ for (let iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
   console.log (tmp);
 }
 
-console.log ("Size of string ArrayList = " + example.size() + " - " + JSON.stringify (example));
+console.log ("Size of string ArrayList = " + example.size() + " - " + JSON.stringify (example).replace(/\\"/g, '"'));
 
 // How much does this feel like in Java
 // ArrayList<String> example = new ArrayList<>();
@@ -42,7 +42,7 @@ for (let iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext()
   console.log (tmpnumber);
 }
 
-console.log ("Size of number ArrayList = " + numlist.size() + " - " + JSON.stringify (numlist));
+console.log ("Size of number ArrayList = " + numlist.size() + " - " + JSON.stringify (numlist).replace(/\\"/g, '"'));
 
 // This is where TypeScript begins to shine vs Java.   number is a built in native type - in Java I'd have to box an Integer or a Double type.
 
@@ -70,15 +70,15 @@ for (let iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasNex
   console.log (tmppsp.sku + " - " + tmppsp.productName);
 }
 
-console.log ("Size of PetStoreProduct ArrayList = " + psplist.size() + " - " + JSON.stringify (psplist));
+console.log ("Size of PetStoreProduct ArrayList = " + psplist.size() + " - " + JSON.stringify (psplist).replace(/\\"/g, '"'));
 
 // What you may or may not have noticed is that I never defined to equals method or a hashcode method on PetStoreProduct
 // The default behavior is to do a equals (===) comparison on every field in the object.   It is very easy to override this as needed
 
 const listvariable : List<PetStoreProduct> = psplist;
-console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable));
+console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable).replace(/\\"/g, '"'));
 
 const collectionvariable : Collection<PetStoreProduct> = psplist;
-console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable));
+console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable).replace(/\\"/g, '"'));
 
 // Yep, ArrayList implements List and Collection, just like it does in Java.   You didn't think this was the only class we implemented?  ;)

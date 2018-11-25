@@ -26,6 +26,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json ",
     "arraylist": "node dist/arraylist.js",
+    "linkedlist": "node dist/linkedlist.js",
     "tslint": "tslint -c tslint.json *.ts"
   },
   "repository": {
