@@ -1,5 +1,5 @@
 // To run this example:
-// npm install 
+// npm install
 // npm run build
 // npm run arraylist
 
@@ -18,7 +18,7 @@ for (let iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
   console.log (tmp);
 }
 
-console.log ("Size of ArrayList = " + example.size());
+console.log ("Size of string ArrayList = " + example.size() + " - " + JSON.stringify (example));
 
 // How much does this feel like in Java
 // ArrayList<String> example = new ArrayList<>();
@@ -27,3 +27,50 @@ console.log ("Size of ArrayList = " + example.size());
 //   System.out.println (tmp);
 // }
 // System.out.println ("Size of ArrayList = " + example.size());
+
+// The big difference here is that in TypeScript, string is a built in native type and in Java, String is a class
+
+const numlist:ArrayList<number> = new ArrayList<number>();
+
+numlist.add (4.99);
+numlist.add (9.99);
+numlist.add (1.99);
+numlist.add (3.99);
+
+for (let iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext(); ) {
+  let tmpnumber:number = iternumber.next();
+  console.log (tmpnumber);
+}
+
+console.log ("Size of number ArrayList = " + numlist.size() + " - " + JSON.stringify (numlist));
+
+// This is where TypeScript begins to shine vs Java.   number is a built in native type - in Java I'd have to box an Integer or a Double type.
+
+class PetStoreProduct {
+  public sku:string;
+  public productName:string;
+
+  constructor (isku:string, ipn:string) {
+    this.sku = isku;
+    this.productName = ipn;
+  }
+}
+
+const psp1:PetStoreProduct = new PetStoreProduct ("123", "Leash");
+const psp2:PetStoreProduct = new PetStoreProduct ("456", "Food");
+const psp3:PetStoreProduct = new PetStoreProduct ("789", "Toy");
+
+const psplist:ArrayList<PetStoreProduct> = new ArrayList<PetStoreProduct>();
+psplist.add (psp1);
+psplist.add (psp2);
+psplist.add (psp3);
+
+for (let iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasNext(); ) {
+  let tmppsp:PetStoreProduct = iterpsp.next();
+  console.log (tmppsp.sku + " - " + tmppsp.productName);
+}
+
+console.log ("Size of PetStoreProduct ArrayList = " + psplist.size() + " - " + JSON.stringify (psplist));
+
+// What you may or may not have noticed is that I never defined to equals method or a hashcode method on PetStoreProduct
+// The default behavior is to do a equals (===) comparison on every field in the object.   It is very easy to override this as needed
