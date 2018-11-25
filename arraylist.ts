@@ -3,7 +3,7 @@
 // npm run build
 // npm run arraylist
 
-import {ArrayList, JIterator} from "typescriptcollectionsframework";
+import {ArrayList, Collection, JIterator, List} from "typescriptcollectionsframework";
 
 console.log ("Welcome to the ArrayList example!");
 
@@ -74,3 +74,11 @@ console.log ("Size of PetStoreProduct ArrayList = " + psplist.size() + " - " + J
 
 // What you may or may not have noticed is that I never defined to equals method or a hashcode method on PetStoreProduct
 // The default behavior is to do a equals (===) comparison on every field in the object.   It is very easy to override this as needed
+
+const listvariable : List<PetStoreProduct> = psplist;
+console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable));
+
+const collectionvariable : Collection<PetStoreProduct> = psplist;
+console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable));
+
+// Yep, ArrayList implements List and Collection, just like it does in Java.   You didn't think this was the only class we implemented?  ;)
