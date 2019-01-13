@@ -15,8 +15,8 @@ example.add ("Cat");
 example.add ("Squirrel");
 example.add ("Dog");
 
-for (let iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
-  let tmp:string = iter.next();
+for (const iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
+  const tmp:string = iter.next();
   console.log (tmp);
 }
 
@@ -29,8 +29,8 @@ numlist.add (9.99);
 numlist.add (1.99);
 numlist.add (3.99);
 
-for (let iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext(); ) {
-  let tmpnumber:number = iternumber.next();
+for (const iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext(); ) {
+  const tmpnumber:number = iternumber.next();
   console.log (tmpnumber);
 }
 
@@ -45,6 +45,7 @@ class PetStoreProduct {
     this.productName = ipn;
   }
 }
+// The TypeScript Collections Framework is a full fledged generic collection framework
 
 const psp1:PetStoreProduct = new PetStoreProduct ("123", "Leash");
 const psp2:PetStoreProduct = new PetStoreProduct ("456", "Food");
@@ -55,20 +56,20 @@ psplist.add (psp1);
 psplist.add (psp2);
 psplist.add (psp3);
 
-for (let iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasNext(); ) {
-  let tmppsp:PetStoreProduct = iterpsp.next();
+for (const iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasNext(); ) {
+  const tmppsp:PetStoreProduct = iterpsp.next();
   console.log (tmppsp.sku + " - " + tmppsp.productName);
 }
 
-console.log ("Size of PetStoreProduct LinkedList = " + psplist.size() + " - " + JSON.stringify (psplist).replace(/\\"/g, '"'));
+console.log ("Size of PetStoreProduct LinkedList = " + psplist.size() + " - " + JSON.stringify (psplist));
 
 const listvariable : List<PetStoreProduct> = psplist;
-console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable).replace(/\\"/g, '"'));
+console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable));
 
 const collectionvariable : Collection<PetStoreProduct> = psplist;
-console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable).replace(/\\"/g, '"'));
+console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable));
 
-// Yep, all the same from ArrayList, nothing impressive yet.
+// Yep, all the same from ArrayList.
 // Let's change that by using some of the other Java methods
 
 console.log ("Does it contain Fox = " + example.contains ("Fox"));
@@ -78,4 +79,4 @@ console.log ("Last Element = " + example.getLast ());
 console.log ("Index Of Cat = " + example.indexOf ("Cat"));
 
 example.set (1, "Fox");
-console.log ("After setting element 1 to Fox, Size of string LinkedList = " + example.size() + " - " + JSON.stringify (example).replace(/\\"/g, '"'));
+console.log ("After setting element 1 to Fox, Size of string LinkedList = " + example.size() + " - " + JSON.stringify (example));

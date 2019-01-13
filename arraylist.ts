@@ -13,12 +13,12 @@ example.add ("Cat");
 example.add ("Squirrel");
 example.add ("Dog");
 
-for (let iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
-  let tmp:string = iter.next();
+for (const iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
+  const tmp:string = iter.next();
   console.log (tmp);
 }
 
-console.log ("Size of string ArrayList = " + example.size() + " - " + JSON.stringify (example).replace(/\\"/g, '"'));
+console.log ("Size of string ArrayList = " + example.size() + " - " + JSON.stringify (example));
 
 // How much does this feel like in Java
 // ArrayList<String> example = new ArrayList<>();
@@ -37,12 +37,12 @@ numlist.add (9.99);
 numlist.add (1.99);
 numlist.add (3.99);
 
-for (let iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext(); ) {
-  let tmpnumber:number = iternumber.next();
+for (const iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext(); ) {
+  const tmpnumber:number = iternumber.next();
   console.log (tmpnumber);
 }
 
-console.log ("Size of number ArrayList = " + numlist.size() + " - " + JSON.stringify (numlist).replace(/\\"/g, '"'));
+console.log ("Size of number ArrayList = " + numlist.size() + " - " + JSON.stringify (numlist));
 
 // This is where TypeScript begins to shine vs Java.   number is a built in native type - in Java I'd have to box an Integer or a Double type.
 
@@ -65,20 +65,21 @@ psplist.add (psp1);
 psplist.add (psp2);
 psplist.add (psp3);
 
-for (let iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasNext(); ) {
-  let tmppsp:PetStoreProduct = iterpsp.next();
+for (const iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasNext(); ) {
+  const tmppsp:PetStoreProduct = iterpsp.next();
   console.log (tmppsp.sku + " - " + tmppsp.productName);
 }
 
-console.log ("Size of PetStoreProduct ArrayList = " + psplist.size() + " - " + JSON.stringify (psplist).replace(/\\"/g, '"'));
+console.log ("Size of PetStoreProduct ArrayList = " + psplist.size() + " - " + JSON.stringify (psplist));
 
 // What you may or may not have noticed is that I never defined to equals method or a hashcode method on PetStoreProduct
 // The default behavior is to do a equals (===) comparison on every field in the object.   It is very easy to override this as needed
+// The TypeScript Collections Framework is a full fledged generic collection framework
 
 const listvariable : List<PetStoreProduct> = psplist;
-console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable).replace(/\\"/g, '"'));
+console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable));
 
 const collectionvariable : Collection<PetStoreProduct> = psplist;
-console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable).replace(/\\"/g, '"'));
+console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable));
 
-// Yep, ArrayList implements List and Collection, just like it does in Java.   You didn't think this was the only class we implemented?  ;)
+// Yep, ArrayList implements List and Collection, just like it does in Java.  
