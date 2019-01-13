@@ -3,7 +3,7 @@
 // npm run build
 // npm run hashset
 
-import {HashSet, Collection, JIterator, JSet} from "typescriptcollectionsframework";
+import {HashSet, Collection, Collections, JIterator, JSet} from "typescriptcollectionsframework";
 
 console.log ("Welcome to the HashSet example!");
 
@@ -96,7 +96,45 @@ for (const iterpsp:JIterator<PetStoreProduct> = pspset.iterator(); iterpsp.hasNe
   console.log (tmppsp.sku + " - " + tmppsp.productName);
 }
 
-console.log ("Size of PetStoreProduct HashSet = " + pspset.size() + " - " + JSON.stringify (pspset));
+console.log ("Added some duplicates: Size of PetStoreProduct HashSet = " + pspset.size() + " - " + JSON.stringify (pspset));
 
 // As you see from the output, the size of the set is still 3 and it's still the same three elements as above
+
+// Comparing on every field is quick and convenient often, but often you just want to compare on just one field.   
+// In any case, it's certainly faster to just compare on one field.
+// Here's how to do that.
+
+const skuset:HashSet<PetStoreProduct> = new HashSet<PetStoreProduct>(Collections.dynamicHashable("sku"));
+
+// Wow wasnt that easier?   No toString method to write and no equals method to write, and no chance of making a mistake and getting it wrong somehow.
+// And this also means you can add in any class into a Collection - they don't need to "support" this framework
+
+skuset.add (psp1);
+skuset.add (psp2);
+skuset.add (psp3);
+
+const pspDuplicateSku:PetStoreProduct = new PetStoreProduct ("123", "NotALeash");
+// Since the sku of pspDuplicateSku matches the sku of psp1 ("123") this PetStoreProduct will not let itself be added to the skuset
+
+skuset.add (pspDuplicateSku);
+
+for (const iterpsp:JIterator<PetStoreProduct> = skuset.iterator(); iterpsp.hasNext(); ) {
+  const tmppsp:PetStoreProduct = iterpsp.next();
+  console.log (tmppsp.sku + " - " + tmppsp.productName);
+}
+
+console.log ("SKUSET: Size of PetStoreProduct HashSet = " + skuset.size() + " - " + JSON.stringify (skuset));
+
+// And when I try to add pspDuplicateSku to the original pspset, it will add because because the default compares every field
+pspset.add (pspDuplicateSku);
+
+for (const iterpsp:JIterator<PetStoreProduct> = pspset.iterator(); iterpsp.hasNext(); ) {
+  const tmppsp:PetStoreProduct = iterpsp.next();
+  console.log (tmppsp.sku + " - " + tmppsp.productName);
+}
+
+console.log ("Added DuplicateSku to original set: Size of PetStoreProduct HashSet = " + pspset.size() + " - " + JSON.stringify (pspset));
+
+
+
 
