@@ -30,6 +30,8 @@ console.log ("Size of string ArrayList = " + example.size() + " - " + JSON.strin
 
 // The big difference here is that in TypeScript, string is a built in native type and in Java, String is a class
 
+console.log ("");  console.log ("");  console.log ("");  
+
 const numlist:ArrayList<number> = new ArrayList<number>();
 
 numlist.add (4.99);
@@ -45,6 +47,8 @@ for (const iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext
 console.log ("Size of number ArrayList = " + numlist.size() + " - " + JSON.stringify (numlist));
 
 // This is where TypeScript begins to shine vs Java.   number is a built in native type - in Java I'd have to box an Integer or a Double type.
+
+console.log ("");  console.log ("");  console.log ("");  
 
 class PetStoreProduct {
   public sku:string;
@@ -71,6 +75,8 @@ for (const iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasN
 }
 
 console.log ("Size of PetStoreProduct ArrayList = " + psplist.size() + " - " + JSON.stringify (psplist));
+
+console.log ("");  console.log ("");  console.log ("");  
 
 // What you may or may not have noticed is that I never defined to equals method or a hashcode method on PetStoreProduct
 // The default behavior is to do a equals (===) comparison on every field in the object.   It is very easy to override this as needed

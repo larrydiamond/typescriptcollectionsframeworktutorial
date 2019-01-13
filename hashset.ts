@@ -20,6 +20,8 @@ for (const iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
 
 console.log ("Size of string HashSet = " + example.size() + " - " + JSON.stringify (example));
 
+console.log ("");  console.log ("");  console.log ("");  
+
 // How much does this feel like in Java
 // HashSet<String> example = new HashSet<>();
 // for (Iterator<String> iter = example.iterator(); iter.hasNext(); ) {
@@ -43,6 +45,8 @@ for (const iternumber:JIterator<number> = numset.iterator(); iternumber.hasNext(
 }
 
 console.log ("Size of number HashSet = " + numset.size() + " - " + JSON.stringify (numset));
+
+console.log ("");  console.log ("");  console.log ("");  
 
 // This is where TypeScript begins to shine vs Java.   number is a built in native type - in Java I'd have to box an Integer or a Double type.
 
@@ -72,6 +76,8 @@ for (const iterpsp:JIterator<PetStoreProduct> = pspset.iterator(); iterpsp.hasNe
 
 console.log ("Size of PetStoreProduct HashSet = " + pspset.size() + " - " + JSON.stringify (pspset));
 
+console.log ("");  console.log ("");  console.log ("");  
+
 // What you may or may not have noticed is that I never defined to equals method or a hashcode method on PetStoreProduct
 // The default behavior is to do a equals (===) comparison on every field in the object.   It is very easy to override this as needed
 // The TypeScript Collections Framework is a full fledged generic collection framework
@@ -81,6 +87,8 @@ console.log ("JSet<PetStoreProduct> = " + setvariable.size() + " - " + JSON.stri
 
 const collectionvariable : Collection<PetStoreProduct> = pspset;
 console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable));
+
+console.log ("");  console.log ("");  console.log ("");  
 
 // Yep, HashSet implements JSet and Collection, just like it does in Java.  
 
@@ -97,6 +105,8 @@ for (const iterpsp:JIterator<PetStoreProduct> = pspset.iterator(); iterpsp.hasNe
 }
 
 console.log ("Added some duplicates: Size of PetStoreProduct HashSet = " + pspset.size() + " - " + JSON.stringify (pspset));
+
+console.log ("");  console.log ("");  console.log ("");  
 
 // As you see from the output, the size of the set is still 3 and it's still the same three elements as above
 
@@ -124,6 +134,8 @@ for (const iterpsp:JIterator<PetStoreProduct> = skuset.iterator(); iterpsp.hasNe
 }
 
 console.log ("SKUSET: Size of PetStoreProduct HashSet = " + skuset.size() + " - " + JSON.stringify (skuset));
+
+console.log ("");  console.log ("");  console.log ("");  
 
 // And when I try to add pspDuplicateSku to the original pspset, it will add because because the default compares every field
 pspset.add (pspDuplicateSku);

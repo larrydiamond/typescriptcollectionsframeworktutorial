@@ -7,7 +7,7 @@ import {Collection, JIterator, LinkedList, List} from "typescriptcollectionsfram
 
 console.log ("Welcome to the LinkedList example!");
 
-// So first lets get do the same examples from ArrayList so we can get to some more interesting examples
+// So first lets get do the same examples from LinkedList so we can get to some more interesting examples
 
 const example:LinkedList<string> = new LinkedList<string>();
 
@@ -22,6 +22,8 @@ for (const iter:JIterator<string> = example.iterator(); iter.hasNext(); ) {
 
 console.log ("Size of string LinkedList = " + example.size() + " - " + JSON.stringify (example));
 
+console.log ("");  console.log ("");  console.log ("");  
+
 const numlist:LinkedList<number> = new LinkedList<number>();
 
 numlist.add (4.99);
@@ -35,6 +37,8 @@ for (const iternumber:JIterator<number> = numlist.iterator(); iternumber.hasNext
 }
 
 console.log ("Size of number LinkedList = " + numlist.size() + " - " + JSON.stringify (numlist));
+
+console.log ("");  console.log ("");  console.log ("");  
 
 class PetStoreProduct {
   public sku:string;
@@ -63,13 +67,17 @@ for (const iterpsp:JIterator<PetStoreProduct> = psplist.iterator(); iterpsp.hasN
 
 console.log ("Size of PetStoreProduct LinkedList = " + psplist.size() + " - " + JSON.stringify (psplist));
 
+console.log ("");  console.log ("");  console.log ("");  
+
 const listvariable : List<PetStoreProduct> = psplist;
 console.log ("List<PetStoreProduct> = " + listvariable.size() + " - " + JSON.stringify (listvariable));
 
 const collectionvariable : Collection<PetStoreProduct> = psplist;
 console.log ("Collection<PetStoreProduct> = " + collectionvariable.size() + " - " + JSON.stringify (collectionvariable));
 
-// Yep, all the same from ArrayList.
+console.log ("");  console.log ("");  console.log ("");  
+
+// Yep, all the same from LinkedList.
 // Let's change that by using some of the other Java methods
 
 console.log ("Does it contain Fox = " + example.contains ("Fox"));
