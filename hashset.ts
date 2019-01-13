@@ -124,7 +124,7 @@ skuset.add (psp2);
 skuset.add (psp3);
 
 const pspDuplicateSku:PetStoreProduct = new PetStoreProduct ("123", "NotALeash");
-// Since the sku of pspDuplicateSku matches the sku of psp1 ("123") this PetStoreProduct will not let itself be added to the skuset
+// Since the sku of pspDuplicateSku matches the sku of psp1 ("123") this PetStoreProduct will replace the existing instance
 
 skuset.add (pspDuplicateSku);
 
@@ -148,5 +148,5 @@ for (const iterpsp:JIterator<PetStoreProduct> = pspset.iterator(); iterpsp.hasNe
 console.log ("Added DuplicateSku to original set: Size of PetStoreProduct HashSet = " + pspset.size() + " - " + JSON.stringify (pspset));
 
 
-
-
+// The great news: HashSet isn't the only implemented Set
+// LinkedHashSet, TreeSet, and SkipListSet have all been ported over from the Java Collections Framework.
