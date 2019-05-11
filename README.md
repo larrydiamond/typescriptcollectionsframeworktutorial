@@ -9,4 +9,6 @@ Start with [ArrayList](https://github.com/larrydiamond/typescriptcollectionsfram
 
 [HashMap](https://github.com/larrydiamond/typescriptcollectionsframeworktutorial/blob/master/hashmap.ts) shows the Map interface and all the goodness we provide there
 
+[TreeSet](https://github.com/larrydiamond/typescriptcollectionsframeworktutorial/blob/master/treeset.ts) shows the TreeSet class and how to work with Sorted and Navigable interfaces
+
 
