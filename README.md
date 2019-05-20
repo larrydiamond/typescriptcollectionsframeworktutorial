@@ -11,4 +11,6 @@ Start with [ArrayList](https://github.com/larrydiamond/typescriptcollectionsfram
 
 [TreeSet](https://github.com/larrydiamond/typescriptcollectionsframeworktutorial/blob/master/treeset.ts) shows the TreeSet class and how to work with Sorted and Navigable interfaces
 
+[CompositeCollection](https://github.com/larrydiamond/typescriptcollectionsframeworktutorial/blob/master/compositecollection.ts) shows the Composite Collection class
+
 
